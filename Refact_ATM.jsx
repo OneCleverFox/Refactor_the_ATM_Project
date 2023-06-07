@@ -1,6 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 
 
 const ATMDeposit = ({ onChange, isDeposit }) => {
@@ -24,7 +22,7 @@ const Account = () => {
   const [totalState, setTotalState] = React.useState(0);
   const [isDeposit, setIsDeposit] = React.useState(true);
 
-  let status = `Account Balance $ ${totalState} `;
+  let status = `Account Balance  ${totalState} €`;
   console.log(`Account Rendered with isDeposit: ${isDeposit}`);
   const handleChange = event => {
     console.log(`handleChange ${event.target.value}`);
@@ -44,12 +42,12 @@ const Account = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 id="total">{status}</h2>
-      <button onClick={() => setIsDeposit(true)}>Deposit</button>
-      <button onClick={() => setIsDeposit(false)}>Cash Back</button>
+      <h2 id="total">{status}</h2>      
       {isDeposit !== null && (
         <ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
       )}
+      <button onClick={() => setIsDeposit(true)}>Deposit</button>
+      <button onClick={() => setIsDeposit(false)}>Cash Back</button>
     </form>
   );
 };

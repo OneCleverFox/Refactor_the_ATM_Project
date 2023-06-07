@@ -6,7 +6,7 @@ body {
   color: #333;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 80px;
 }
 
 /* Center align the h1 */
@@ -16,7 +16,8 @@ h1 {
 
 /* Add some margin to the root div */
 #root {
-  margin-top: 20px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 /* Style the label for the deposit/cash back choice */
@@ -59,7 +60,7 @@ button {
 /* Add some spacing between buttons and input fields */
 button,
 input {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 /* Add some hover effect to buttons */
@@ -69,5 +70,5 @@ button:hover {
 
 /* Add some hover effect to input fields */
 input:hover {
-  border-color: #66afe9;
+  border-color: #53e90d;
 }

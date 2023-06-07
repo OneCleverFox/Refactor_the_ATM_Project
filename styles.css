@@ -1,0 +1,73 @@
+/* styles.css */
+
+/* Set background color and text color for the body */
+body {
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Center align the h1 */
+h1 {
+  text-align: center;
+}
+
+/* Add some margin to the root div */
+#root {
+  margin-top: 20px;
+}
+
+/* Style the label for the deposit/cash back choice */
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Style the input fields */
+input[type="number"],
+input[type="submit"] {
+  width: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Style the buttons */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style the account balance */
+#total {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Add some spacing between buttons and input fields */
+button,
+input {
+  margin-top: 10px;
+}
+
+/* Add some hover effect to buttons */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Add some hover effect to input fields */
+input:hover {
+  border-color: #66afe9;
+}

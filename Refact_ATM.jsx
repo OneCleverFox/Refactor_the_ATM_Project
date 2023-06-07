@@ -1,12 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+
 const ATMDeposit = ({ onChange, isDeposit }) => {
   const choice = ["Deposit", "Cash Back"];
   console.log(`ATM isDeposit: ${isDeposit}`);
   return (
-    <label className="label huge">
-      <h3> {choice[Number(!isDeposit)]}</h3>
-      <input type="number" width="200" onChange={onChange}></input>
-      <input type="submit" width="200" value="Submit"></input>
-    </label>
+    <div>
+      {isDeposit !== null && (
+        <label className="label huge">
+          <h3> {choice[Number(!isDeposit)]}</h3>
+          <input type="number" width="200" onChange={onChange}></input>
+          <input type="submit" width="200" value="Submit"></input>
+        </label>
+      )}
+    </div>
   );
 };
 
@@ -21,20 +30,28 @@ const Account = () => {
     console.log(`handleChange ${event.target.value}`);
     deposit = Number(event.target.value);
   };
-  const handleSubmit = () => {
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    if ((isDeposit && deposit < 0) || (!isDeposit && deposit > totalState)) {
+      // Invalid transaction, do not update the totalState
+      return;
+    }
     let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
     setTotalState(newTotal);
-    event.preventDefault();
   };
+    
 
   return (
     <form onSubmit={handleSubmit}>
       <h2 id="total">{status}</h2>
       <button onClick={() => setIsDeposit(true)}>Deposit</button>
       <button onClick={() => setIsDeposit(false)}>Cash Back</button>
-      <ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
+      {isDeposit !== null && (
+        <ATMDeposit onChange={handleChange} isDeposit={isDeposit}></ATMDeposit>
+      )}
     </form>
   );
 };
 // ========================================
-ReactDOM.render(<Account />, document.getElementById("root"));
+ReactDOM.createRoot(document.getElementById("root")).render(<Account />);

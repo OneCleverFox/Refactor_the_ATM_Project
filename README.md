@@ -1,4 +1,3 @@
-Sure! Here's an example of a README file for the code you provided:
 
 # ATM Machine
 
@@ -14,7 +13,34 @@ To run the ATM Machine web application locally, follow these steps:
    git clone https://github.com/OneCleverFox/Refactor_the_ATM_Project.git
    ```
 
-2. Open the `index.html` file in a web browser.
+2. Start an HTTP server to serve the files. There are several ways to do this:
+
+   - **Using Node.js**:
+     - Install Node.js if you haven't already. You can download it from the official website: [https://nodejs.org](https://nodejs.org)
+     - Open a terminal or command prompt and navigate to the project directory.
+     - Install the `http-server` package globally by running the following command:
+       ```shell
+       npm install -g http-server
+       ```
+     - Start the server by running the following command:
+       ```shell
+       http-server
+       ```
+     - Open your web browser and visit [http://localhost:8080](http://localhost:8080) to access the application.
+
+   - **Using Python**:
+     - If you have Python installed, open a terminal or command prompt and navigate to the project directory.
+     - Start the server by running the following command:
+       ```shell
+       python -m http.server
+       ```
+     - Open your web browser and visit [http://localhost:8000](http://localhost:8000) to access the application.
+
+   - **Using VS Code Live Server Extension**:
+     - If you use Visual Studio Code, you can install the Live Server extension from the VS Code Marketplace.
+     - Open the project directory in VS Code.
+     - Right-click on the `index.html` file and select "Open with Live Server" from the context menu.
+     - The application will open in your default web browser.
 
 ## Usage
 
@@ -54,10 +80,4 @@ The repository has the following file structure:
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-The code in this repository is licensed under the [MIT License](LICENSE).
-
-Feel free to update the README file according to your needs, and include any additional sections or information that may be relevant to your project.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue
